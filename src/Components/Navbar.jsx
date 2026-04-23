@@ -1,6 +1,7 @@
 'use client'
 import { Button, Link } from '@heroui/react'
 import { signOut, useSession } from '@/lib/auth-client'
+import { ThemeSwitch } from './../Theme/ThemeSwitch';
 
 const Navbar = () => {
     const { data, isPending } = useSession()
@@ -30,7 +31,9 @@ const Navbar = () => {
                                 <Link href='/auth/signin'>SingIn</Link>
                                 </>
                         }
+                        <ThemeSwitch></ThemeSwitch>
                     </div>
+                    
                 </header>
             </nav>
         </div>
