@@ -2,14 +2,23 @@ import { Envelope } from "@gravity-ui/icons";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
 import { handleProduct } from './../../lib/action/action';
 import { getProducts } from "../../api/product";
+import { auth } from "../../lib/auth";
+import { headers } from "next/headers";
 
 const Products = async () => {
     const products = await getProducts()
     // console.log(products)
+    const session=await auth.api.getSession({
+        headers:await headers()
+    })
+    const user=session?.user;
+    if(!user){
+        return <div className="text-center font-bold text-2xl my-20">Place Sign In to Access Product Section</div>
+    }
     return (
         <div>
             <h2 className='text-4xl text-center my-5 font-bold text-red-600'>Products</h2>
-            <div>
+            <div className="mx-10 my-5">
                 <Modal>
                     <Button variant="secondary">Open Product Form</Button>
                     <Modal.Backdrop>

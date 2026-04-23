@@ -1,15 +1,26 @@
 import { Envelope } from "@gravity-ui/icons";
 import { Button, Input, Label, Modal, Surface, TextField } from "@heroui/react";
-import { createPost } from "../../lib/productAction/action";
-import { getsData } from "../../lib/productAction/product";
+import { getsData } from '../../lib/server-action/product';
+import { createPost } from "../../lib/server-action/action";
+import { auth } from "../../lib/auth";
+import { headers } from "next/headers";
+import { redirect } from "next/navigation";
 
 const Products = async () => {
     const products = await getsData()
-    console.log(products)
+    // console.log(products)
+    const session=await auth.api.getSession({
+        headers:await headers()
+    })
+    const user=session?.user;
+    if(!user){
+        // redirect('/auth/signin')
+        return <div className="text-center font-bold text-2xl my-20">Place SignIn To access Server Action</div>
+    }
     return (
         <div>
             <h2 className='text-4xl text-center my-5 font-bold text-red-600'>Server Action</h2>
-            <div>
+            <div className="mx-10 my-5">
                 <Modal>
                     <Button variant="secondary">Open Product Form</Button>
                     <Modal.Backdrop>
