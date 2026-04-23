@@ -1,10 +1,14 @@
-import { getProduct } from './../Api/product';
+'use server'
+import { addProduct } from "./product"
+import { revalidatePath } from "next/cache"
 
-export const product=async()=>{
-    return getProduct;
-}
-export const postProduct=async(newProducts)=>{
-    newProducts.id=product.length+1;
-    product.push(newProducts);
-    return { ok: true, messages: 'Task added successfuly' }
+export const handleProduct=async(formData)=>{
+    const data=Object.fromEntries(formData)
+    console.log(data)
+    // const{title,brand,category,description,price}=data
+
+    // await addProduct({title,brand,category,description,price})
+    await addProduct(data)
+    revalidatePath('/products')
+
 }

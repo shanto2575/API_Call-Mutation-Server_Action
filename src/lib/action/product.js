@@ -1,14 +1,18 @@
-import { revalidatePath } from "next/cache"
-import { postProduct } from "./action"
 
-export const createProduct=async(FormData)=>{
-    'use server'
-    const newProduct=Object.fromEntries(FormData)
-    console.log(newProduct)
-
-    const res=await postProduct(newProduct)
-    if(res.ok){
-        revalidatePath('/product')
-    }
-    return res;
+export const getProducts = async () => {
+    const res = await fetch('http://localhost:5000/products')
+    return res.json()
 }
+
+
+export const addProduct = async (newProduct) => {
+    const res = await fetch('http://localhost:5000/products', {
+        method: "POST",              
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+    });
+
+    return res.json();
+};

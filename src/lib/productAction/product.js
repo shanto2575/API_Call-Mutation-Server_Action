@@ -1,0 +1,171 @@
+export const productsData = [
+    {
+        "id": "1",
+        "title": "iPhone 15 Pro Max",
+        "brand": "Apple",
+        "category": "Smartphone",
+        "price": 1650,
+        "stock": 12,
+        "rating": 4.9,
+        "thumbnail": "https://picsum.photos/400/300?random=1",
+        "description": "Latest Apple flagship smartphone with A17 Pro chip",
+        "tags": [
+            "mobile",
+            "apple",
+            "premium"
+        ]
+    },
+    {
+        "id": "2",
+        "title": "Samsung Galaxy S24 Ultra",
+        "brand": "Samsung",
+        "category": "Smartphone",
+        "price": 1450,
+        "stock": 18,
+        "rating": 4.8,
+        "thumbnail": "https://picsum.photos/400/300?random=2",
+        "description": "High-end Android smartphone with powerful camera",
+        "tags": [
+            "mobile",
+            "android"
+        ]
+    },
+    {
+        "id": "3",
+        "title": "MacBook Air M3",
+        "brand": "Apple",
+        "category": "Laptop",
+        "price": 1800,
+        "stock": 7,
+        "rating": 4.9,
+        "thumbnail": "https://picsum.photos/400/300?random=3",
+        "description": "Lightweight laptop with Apple M3 chip",
+        "tags": [
+            "laptop",
+            "apple"
+        ]
+    },
+    {
+        "id": "4",
+        "title": "Dell XPS 13",
+        "brand": "Dell",
+        "category": "Laptop",
+        "price": 1400,
+        "stock": 10,
+        "rating": 4.7,
+        "thumbnail": "https://picsum.photos/400/300?random=4",
+        "description": "Premium ultrabook for professionals",
+        "tags": [
+            "laptop",
+            "windows"
+        ]
+    },
+    {
+        "id": "5",
+        "title": "Sony WH-1000XM5",
+        "brand": "Sony",
+        "category": "Headphone",
+        "price": 420,
+        "stock": 20,
+        "rating": 4.8,
+        "thumbnail": "https://picsum.photos/400/300?random=5",
+        "description": "Noise cancelling wireless headphones",
+        "tags": [
+            "audio",
+            "wireless"
+        ]
+    },
+    {
+        "id": "6",
+        "title": "Apple Watch Series 9",
+        "brand": "Apple",
+        "category": "Smartwatch",
+        "price": 550,
+        "stock": 15,
+        "rating": 4.7,
+        "thumbnail": "https://picsum.photos/400/300?random=6",
+        "description": "Advanced health tracking smartwatch",
+        "tags": [
+            "watch",
+            "fitness"
+        ]
+    },
+    {
+        "id": "7",
+        "title": "Logitech MX Master 3S",
+        "brand": "Logitech",
+        "category": "Accessories",
+        "price": 120,
+        "stock": 30,
+        "rating": 4.9,
+        "thumbnail": "https://picsum.photos/400/300?random=7",
+        "description": "Best productivity wireless mouse",
+        "tags": [
+            "mouse",
+            "office"
+        ]
+    },
+    {
+        "id": "8",
+        "title": "iPad Pro M2",
+        "brand": "Apple",
+        "category": "Tablet",
+        "price": 1300,
+        "stock": 9,
+        "rating": 4.8,
+        "thumbnail": "https://picsum.photos/400/300?random=8",
+        "description": "Powerful tablet for creators",
+        "tags": [
+            "tablet",
+            "apple"
+        ]
+    },
+    {
+        "title": "poco",
+        "brand": "poc",
+        "category": "phone",
+        "description": "this is a magic phone",
+        "price": "12000",
+        "id": "ztNcAZNaxo0"
+    },
+    {
+        "title": "dd",
+        "brand": "fadsa",
+        "category": "fdsfa",
+        "description": "this is a magic phone",
+        "price": "12000",
+        "id": "F96y9KfdqwU"
+    },
+    {
+        "title": "sumsung",
+        "brand": "sumsung",
+        "category": "smart phone",
+        "description": "this is nice phone",
+        "price": "12000000",
+        "id": "JKioyIeuJss"
+    },
+    {
+        "title": "sa",
+        "brand": "ka",
+        "category": "kldfa;",
+        "description": ";daf",
+        "price": "4331",
+        "id": "VeyEygBvH20"
+    },
+    {
+        "title": "dda",
+        "brand": "adsf",
+        "category": "asd",
+        "description": "this is a magic book",
+        "price": "12000",
+        "id": "H3qDgBKbVLk"
+    }
+]
+
+
+export const addToList = (newData) => {
+    productsData.push(newData)
+}
+export const getsData = async() => {
+    return productsData;
+}
